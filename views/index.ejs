@@ -1,0 +1,12 @@
+<%- include('partials/head') %>
+
+    <% if (user) { %>
+        <h1>Welcome to the Movies Watchlist App <%= user.username %>!</h1>
+        <p>create your own watchlist! rate your favorite movies,<br>and track your watched movies <br>all in one place</p>
+
+    <% } else { %>
+        <h1>Welcome to the Movies Watchlist App guest.</h1>
+        <p>create your own watchlist! rate your favorite movies,<br>and track your watched movies <br>all in one place</p>
+
+    <% } %>
+<%- include('partials/footer') %>
