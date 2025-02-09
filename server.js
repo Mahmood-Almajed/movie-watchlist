@@ -61,10 +61,10 @@ app.use(isSignedIn);
 //MOVIES ROUTES
 app.get('/users/:userId/movies',moviesCtrl.index);
 app.get('/users/:userId/movies/new',moviesCtrl.newMoviePage);
-app.post('/users/:userId/movies',moviesCtrl.newMovie)
-app.get('/users/:userId/movies/:movieId',moviesCtrl.show)
+app.post('/users/:userId/movies',moviesCtrl.newMovie);
+app.get('/users/:userId/movies/:movieId',moviesCtrl.show);
 app.get('/users/:userId/movies/:movieId/edit',moviesCtrl.movieEditPage);
-
+app.delete('/users/:userId/movies/:movieId');
 
 
 app.listen(port, () => {

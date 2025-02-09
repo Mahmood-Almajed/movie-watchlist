@@ -74,10 +74,11 @@ const show = async (req, res) => {
 const movieEditPage = async (req, res) => {
     try {
         const userId = await User.findById(req.params.userId);
-        const movieId = await userId.movies.id(req.param.movieId);
+        const movieId = userId.movies.id(req.params.movieId);
         res.render('movies/edit.ejs', {
             title: `edit movie`,
-            movieId: movieId,
+            movieId,
+
         })
 
 
