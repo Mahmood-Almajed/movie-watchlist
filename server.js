@@ -45,7 +45,6 @@ app.use(passUserToView)
 // CONTROLLERS
 const pagesCtrl = require('./controllers/pages')
 const authCtrl = require('./controllers/auth')
-// const vipCtrl = require('./controllers/vip')
 const moviesCtrl= require('./controllers/movies')
 
 // ROUTE HANDLERS
@@ -55,7 +54,6 @@ app.post('/auth/sign-up', authCtrl.addUser)
 app.get('/auth/sign-in', authCtrl.signInForm)
 app.post('/auth/sign-in', authCtrl.signIn)
 app.get('/auth/sign-out', authCtrl.signOut)
-// app.get('/vip-lounge', isSignedIn, vipCtrl.welcome)
 
 app.use(isSignedIn);
 //MOVIES ROUTES
@@ -64,7 +62,8 @@ app.get('/users/:userId/movies/new',moviesCtrl.newMoviePage);
 app.post('/users/:userId/movies',moviesCtrl.newMovie);
 app.get('/users/:userId/movies/:movieId',moviesCtrl.show);
 app.get('/users/:userId/movies/:movieId/edit',moviesCtrl.movieEditPage);
-app.delete('/users/:userId/movies/:movieId');
+app.put('/users/:userId/movies/:movieId',moviesCtrl.updateMovie);
+app.delete('/users/:userId/movies/:movieId',moviesCtrl.deleteMovie);
 
 
 app.listen(port, () => {

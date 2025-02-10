@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
 body {
-    background-color:lightskyblue;
+    background-color: rgb(231, 231, 231);
     margin: 0px;
     text-align: center;
+    font-family: Antnon ,sans;
 }
 
 .container {
@@ -10,6 +13,12 @@ body {
     align-items: center;
 }
 
+
+.card-container{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
 form {
     display: flex;
     flex-direction: column;
@@ -18,4 +27,11 @@ form {
 
 form button {
     margin-top: 10px;
+}
+
+.navbar{
+
+    background: linear-gradient(135deg, #f5c518, #000000); /* Yellow to Black gradient */
+    font-size: 1.5rem;
+
 }

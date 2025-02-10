@@ -18,6 +18,7 @@ const moviesSchema= mongoose.Schema({
         type:String,
         enum:['watched','to watch','wathcing']
     },
+   
     rating:{
         type:Number,
         min:0,

@@ -93,6 +93,41 @@ const movieEditPage = async (req, res) => {
 
 }
 
+const updateMovie =async(req,res)=>{
+try {
+    const userId= await User.findById(req.params.userId);
+    const movieId= userId.movies.id(req.params.movieId);
+    movieId.set(req.body);
+    await userId.save();
+    res.redirect(`/users/${userId._id}/movies/${movieId._id}`)
+
+
+    
+} catch (error) {
+        console.log(error);
+        res.redirect('/');
+}
+
+}
+
+
+
+const deleteMovie = async(req,res)=>{
+try {
+    const userId = await User.findById(req.params.userId);
+    userId.movies.id(req.params.movieId).deleteOne();
+    await userId.save();
+    res.redirect(`/users/${userId._id}/movies`);
+
+
+
+
+} catch (error) {
+    console.log(error);
+    res.redirect('/')   
+}
+
+}
 
 module.exports = {
 
@@ -100,6 +135,8 @@ module.exports = {
     newMoviePage,
     newMovie,
     movieEditPage,
-    show
+    show,
+    updateMovie,
+    deleteMovie,
 }
 

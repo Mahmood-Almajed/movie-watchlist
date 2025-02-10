@@ -4,7 +4,7 @@
 <div class="container">
 
     <h1>Edit movie:</h1>
-    <form action="" >
+    <form action="/users/<%= user._id %>/movies/<%= movieId._id %>?_method=PUT" method="POST" >
         <label for="title">Movie Name:</label>
         <input type="text" name="title" id="title" value="<%= movieId.title %>">
         <label for="genre">Genre:</label>
@@ -18,8 +18,6 @@
             <option value="to watch" <%= movieId.watchStatus === "to watch" ? "selected" : '' %>>To watch</option>
             <option value="watching" <%= movieId.watchStatus === "watching" ? "selected" : '' %>>Watching</option>
             
-
-            00
         </select>
         <label for="rating">Rating:</label>
         <input type="text" name="rating" id="rating" value="<%= movieId.rating %>">
