@@ -5,7 +5,7 @@
     <% userMovies.movies.forEach(movie => { %>
      
           <div class="card" style="width: 18rem; ">
-            <img src="https://lionsgate.brightspotcdn.com/59/e8/576c91ae47e4aa7fd6240dc48674/john-wick-chapter-1-movies-poster-01.jpg" class="card-img-top" alt="...">
+            <img src="<%= movie.poster %>" class="card-img-top" alt="movie">
             <div class="card-body">
               <h5 class="card-title"><%= movie.title %></h5>
               <h6 class="card-subtitle mb-5 text-body-secondary"><%= movie.rating %>/10</h6>

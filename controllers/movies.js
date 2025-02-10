@@ -30,6 +30,10 @@ const newMoviePage = (req, res) => {
 const newMovie = async (req, res) => {
     try {
         const userId = await User.findById(req.params.userId);
+
+    
+
+
         userId.movies.push(req.body);
         console.log(req.body)
         await userId.save();
@@ -41,6 +45,10 @@ const newMovie = async (req, res) => {
         res.redirect('/');
     }
 }
+
+
+
+
 
 
 const show = async (req, res) => {

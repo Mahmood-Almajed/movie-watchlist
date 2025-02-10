@@ -18,6 +18,10 @@ const moviesSchema= mongoose.Schema({
         type:String,
         enum:['watched','to watch','wathcing']
     },
+      poster:{
+        type:String
+        
+      }, 
    
     rating:{
         type:Number,
