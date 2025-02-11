@@ -1,26 +1,23 @@
 <%- include('../partials/head') %>
 
-    <h1>your movie watchlist</h1>
-    
-        <div class="card" style="width: 18rem; margin:15px">
-            <div class="card-body">
-              <h4 class="card-title"><%= movieId.title %></h5>
-              <h5 class="card-subtitle mb-5 text-body-secondary"><%= movieId.rating %></h6>
-                <h6 class="card-subtitle mb-5 text-body-secondary"><%= movieId.watchStatus %></h6>
-              <p class="card-text"><%= movieId.review %></p>
-
-              <a href="/users/<%= user._id %>/movies/<%= movieId._id %>/edit" class="btn btn-warning">Edit</a>
-      
-              <a href="/users/<%= user._id %>/movies" class="btn btn-secondary">Go Back</a>
-              <form action="/users/<%= user._id %>/movies/<%= movieId._id %>?_method=DELETE" method="POST">
-                <button type="submit" class="btn btn-danger">Delete</button>
-              </form>
-
+<div class="container mt-5">
+    <h1>Your Movie Watchlist</h1>
+    <div class="card mb-4 shadow-sm" style="width: 18rem; margin: auto;">
+        <img src="<%= movieId.poster %>" class="card-img-top" alt="movie">
+        <div class="card-body">
+            <h4 class="card-title"><%= movieId.title %></h4>
+            <h5 class="card-subtitle mb-2 text-muted"><%= movieId.rating %>/10</h5>
+            <h6 class="card-subtitle mb-2 text-muted"><%= movieId.watchStatus %></h6>
+            <p class="card-text"><%= movieId.review %></p>
+            <div class="d-flex justify-content-between align-items-center">
+                <a href="/users/<%= user._id %>/movies/<%= movieId._id %>/edit" class="btn btn-warning">Edit</a>
+                <a href="/users/<%= user._id %>/movies" class="btn btn-secondary">Go Back</a>
             </div>
-          </div>
+            <form action="/users/<%= user._id %>/movies/<%= movieId._id %>?_method=DELETE" method="POST" class="mt-2">
+                <button type="submit" class="btn btn-danger">Delete</button>
+            </form>
+        </div>
+    </div>
+</div>
 
-
-
-  
-
-<%- include('../partials/footer') %>
+<%- include('../partials/footer') %>  

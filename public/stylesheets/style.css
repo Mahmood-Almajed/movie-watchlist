@@ -1,37 +1,122 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
 body {
-    background-color: rgb(231, 231, 231);
+    background-color: #dedede; 
     margin: 0px;
     text-align: center;
-    font-family: Antnon ,sans;
+    font-family: Anton, sans-serif;
 }
 
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 20px;
+    justify-content: center;
 }
 
-
-.card-container{
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-}
-form {
+.movie-container{
     display: flex;
     flex-direction: column;
-    max-width: 40vw;
+    align-items: center;
+    padding: 20px;
+    justify-content: center;
+    margin:0 auto;
+}
+.movies-list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    
+
 }
 
-form button {
-    margin-top: 10px;
+.card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin: 10px; 
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    
+
 }
 
-.navbar{
 
-    background: linear-gradient(135deg, #f5c518, #000000); /* Yellow to Black gradient */
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card > img {
+    height: 300px; 
+    object-fit: fill; 
+    width: 100%;
+    
+}
+
+form {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-control {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.btn-primary {
+    background-color: #4b6cb7;
+    border-color: #4b6cb7;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #182848;
+    border-color: #182848;
+}
+
+.navbar {
+    background: linear-gradient(170deg, #4b6cb7, #182848, #ccc); 
     font-size: 1.5rem;
+    padding: 10px; 
+}
+
+.navbar-expand-lg ,.navbar-nav, .nav-link {
+    color: white;
 
 }
+
+.bi:hover{
+    background-color: black;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-top: 15px;
+    color: #4b6cb7; 
+}
+
+p {
+    font-size: 1.25rem;
+    color: #091831; 
+    margin-top: 20px;
+   
+}
+
+
+

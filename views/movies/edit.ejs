@@ -1,34 +1,57 @@
 <%- include('../partials/head') %>
 
-
-<div class="container">
-
-    <h1>Edit movie:</h1>
-    <form action="/users/<%= user._id %>/movies/<%= movieId._id %>?_method=PUT" method="POST"  >
-        <label for="title">Movie Name:</label>
-        <input type="text" name="title" id="title" value="<%= movieId.title %>">
-        <label for="genre">Genre:</label>
-        <input type="text" name="genre" id="genre" value="<%= movieId.genre %>" >
-        <label for="review">Review:</label>
-        <textarea name="review" id="review"> <%= movieId.review %> </textarea>
-        <label for="watchStatus">Watch Status:</label>
-        <label for="">poster</label>
-        <input type="text" name="poster" >
-        <select name="watchStatus" id="watchStatus">
-            <option value="" selected disabled></option>
-            <option value="watched" <%= movieId.watchStatus === "watched" ? "selected" : '' %>>Watched</option>
-            <option value="to watch" <%= movieId.watchStatus === "to watch" ? "selected" : '' %>>To watch</option>
-            <option value="watching" <%= movieId.watchStatus === "watching" ? "selected" : '' %>>Watching</option>
-            
-        </select>
-        <label for="rating">Rating:</label>
-        <input type="text" name="rating" id="rating" value="<%= movieId.rating %>">
-
-
+<div class="container mt-5">
+    <h1>Edit Movie:</h1>
+    <form action="/users/<%= user._id %>/movies/<%= movieId._id %>?_method=PUT" method="POST" class="needs-validation" novalidate>
+        <div class="form-group">
+            <label for="title">Movie Name:</label>
+            <input type="text" name="title" id="title" class="form-control" value="<%= movieId.title %>" required>
+            <div class="invalid-feedback">
+                Please provide a movie name.
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="genre">Genre:</label>
+            <input type="text" name="genre" id="genre" class="form-control" value="<%= movieId.genre %>" required>
+            <div class="invalid-feedback">
+                Please provide a genre.
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="review">Review:</label>
+            <textarea name="review" id="review" class="form-control" rows="3" required><%= movieId.review %></textarea>
+            <div class="invalid-feedback">
+                Please provide a review.
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="poster">Poster URL:</label>
+            <input type="text" name="poster" id="poster" class="form-control" value="<%= movieId.poster %>" required>
+            <div class="invalid-feedback">
+                Please provide a poster URL.
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="watchStatus">Watch Status:</label>
+            <select name="watchStatus" id="watchStatus" class="form-control" required>
+                <option value="" selected disabled>Select status</option>
+                <option value="watched" <%= movieId.watchStatus === "watched" ? "selected" : '' %>>Watched</option>
+                <option value="to watch" <%= movieId.watchStatus === "to watch" ? "selected" : '' %>>To watch</option>
+                <option value="watching" <%= movieId.watchStatus === "watching" ? "selected" : '' %>>Watching</option>
+            </select>
+            <div class="invalid-feedback">
+                Please select a watch status.
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="rating">Rating:</label>
+            <input type="text" name="rating" id="rating" class="form-control" value="<%= movieId.rating %>" required>
+            <div class="invalid-feedback">
+                Please provide a rating.
+            </div>
+        </div>
         <button type="submit" class="btn btn-primary">Apply Edit</button>
     </form>
-    
 </div>
-
 
 <%- include('../partials/footer') %>

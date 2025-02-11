@@ -1,21 +1,25 @@
 <%- include('../partials/head') %>
-    <div class="movies-list">
-    <h1>your movie watchlist</h1>        
-    <div class="card-container">
-    <% userMovies.movies.forEach(movie => { %>
-     
-          <div class="card" style="width: 18rem; ">
-            <img src="<%= movie.poster %>" class="card-img-top" alt="movie">
-            <div class="card-body">
-              <h5 class="card-title"><%= movie.title %></h5>
-              <h6 class="card-subtitle mb-5 text-body-secondary"><%= movie.rating %>/10</h6>
-              <p class="card-text"><%= movie.genre %></p>
-              <a href="/users/<%= user._id %>/movies/<%= movie._id %>" class="btn btn-primary">show more</a>
-              <a href="/users/<%= movie._id %>/movies" class="btn btn-secondary">Go Back</a>
-            </div>
-          </div>
-      </div>
 
-    <% }) %>
-  </div>
+<h1>Your Movie Watchlist</h1>
+<div class="movie-container">
+    <div class="movies-list">
+        <% userMovies.movies.forEach(movie => { %>
+             
+            <div class="card-container">
+                <div class="card">
+                    <img src="<%= movie.poster %>" class="card-img-top"  alt="<%= movie.title %>">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= movie.title %></h5>
+                        <h6 class="card-subtitle mb-2 text-muted"><%= movie.rating %>/10</h6>
+                        <p class="card-text"><%= movie.genre %></p>
+                        <div class="d-flex justify-content-center align-items-center">
+                            <a href="/users/<%= user._id %>/movies/<%= movie._id %>" class="btn btn-primary">Show More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+</div>
+    
 <%- include('../partials/footer') %>
