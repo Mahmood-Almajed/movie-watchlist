@@ -29,11 +29,12 @@ const newMoviePage = (req, res) => {
 }
 const newMovie = async (req, res) => {
     try {
+        if (req.body.poster === "") {
+
+            req.body.poster = "https://static.vecteezy.com/system/resources/previews/003/611/119/non_2x/do-not-record-images-no-photography-sign-free-vector.jpg"
+        }
+
         const userId = await User.findById(req.params.userId);
-
-    
-
-
         userId.movies.push(req.body);
         console.log(req.body)
         await userId.save();
@@ -56,8 +57,8 @@ const show = async (req, res) => {
 
         const userId = await User.findById(req.params.userId);
         const movieId = await userId.movies.id(req.params.movieId);
-        res.render('movies/show.ejs',{
-            title:'Show Movie',
+        res.render('movies/show.ejs', {
+            title: 'Show Movie',
             movieId,
             userId,
 
@@ -78,7 +79,6 @@ const show = async (req, res) => {
 
 
 
-//edit user
 const movieEditPage = async (req, res) => {
     try {
         const userId = await User.findById(req.params.userId);
@@ -101,39 +101,39 @@ const movieEditPage = async (req, res) => {
 
 }
 
-const updateMovie =async(req,res)=>{
-try {
-    const userId= await User.findById(req.params.userId);
-    const movieId= userId.movies.id(req.params.movieId);
-    movieId.set(req.body);
-    await userId.save();
-    res.redirect(`/users/${userId._id}/movies/${movieId._id}`)
+const updateMovie = async (req, res) => {
+    try {
+        const userId = await User.findById(req.params.userId);
+        const movieId = userId.movies.id(req.params.movieId);
+        movieId.set(req.body);
+        await userId.save();
+        res.redirect(`/users/${userId._id}/movies/${movieId._id}`)
 
 
-    
-} catch (error) {
+
+    } catch (error) {
         console.log(error);
         res.redirect('/');
-}
+    }
 
 }
 
 
 
-const deleteMovie = async(req,res)=>{
-try {
-    const userId = await User.findById(req.params.userId);
-    userId.movies.id(req.params.movieId).deleteOne();
-    await userId.save();
-    res.redirect(`/users/${userId._id}/movies`);
+const deleteMovie = async (req, res) => {
+    try {
+        const userId = await User.findById(req.params.userId);
+        userId.movies.id(req.params.movieId).deleteOne();
+        await userId.save();
+        res.redirect(`/users/${userId._id}/movies`);
 
 
 
 
-} catch (error) {
-    console.log(error);
-    res.redirect('/')   
-}
+    } catch (error) {
+        console.log(error);
+        res.redirect('/')
+    }
 
 }
 

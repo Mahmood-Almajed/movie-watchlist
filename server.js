@@ -1,6 +1,4 @@
 require('dotenv').config()
-// const dotenv = require('dotenv')
-// dotenv.config()
 const express = require('express')
 const app = express()
 const session = require('express-session')
@@ -46,7 +44,7 @@ app.use(passUserToView)
 const pagesCtrl = require('./controllers/pages')
 const authCtrl = require('./controllers/auth')
 const moviesCtrl= require('./controllers/movies')
-
+const communityCtrl=require('./controllers/community');
 // ROUTE HANDLERS
 app.get('/', pagesCtrl.home)
 app.get('/auth/sign-up', authCtrl.signUp)
@@ -65,6 +63,10 @@ app.get('/users/:userId/movies/:movieId/edit',moviesCtrl.movieEditPage);
 app.put('/users/:userId/movies/:movieId',moviesCtrl.updateMovie);
 app.delete('/users/:userId/movies/:movieId',moviesCtrl.deleteMovie);
 
+
+//COMMUNITY ROUTES
+app.get('/community',communityCtrl.communityIndex);
+app.get('/community/:userId/show',communityCtrl.userMovies)
 
 app.listen(port, () => {
     console.log(`The express app is ready on port ${port}`)

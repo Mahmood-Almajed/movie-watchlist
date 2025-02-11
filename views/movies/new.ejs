@@ -1,53 +1,45 @@
 <%- include('../partials/head') %>
 
-<div class="container mt-5">
-    <h1>Add a New Movie:</h1>
-    <form action="/users/<%= user._id %>/movies" method="POST" >
-        <div class="form-group">
-            <label for="title">Movie Name:</label>
-            <input type="text" name="title" id="title" class="form-control" required>
-            <div class="invalid-feedback">
-                Please provide a movie name.
+    <div class="container mt-5">
+        <h1>Add a New Movie:</h1>
+        <form action="/users/<%= user._id %>/movies" method="POST">
+            <div class="form-group">
+                <label for="title">Movie Name:</label>
+                <input type="text" name="title" id="title" class="form-control" required>
+                
             </div>
-        </div>
-        <div class="form-group">
-            <label for="genre">Genre:</label>
-            <input type="text" name="genre" id="genre" class="form-control" required>
-            <div class="invalid-feedback">
-                Please provide a genre.
+            <div class="form-group">
+                <label for="genre">Genre:</label>
+                <input type="text" name="genre" id="genre" class="form-control" required>
+              
             </div>
-        </div>
-        <div class="form-group">
-            <label for="review">Review:</label>
-            <textarea name="review" id="review" class="form-control" rows="3" ></textarea>
-           
-        </div>
-        <div class="form-group">
-            <label for="poster">Poster URL:</label>
-            <input type="text" name="poster" id="poster" class="form-control" required>
-            <div class="invalid-feedback">
-                Please provide a poster URL.
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="watchStatus">Watch Status:</label>
-            <select name="watchStatus" id="watchStatus" class="form-control" required>
-                <option value="" selected disabled>Select status</option>
-                <option value="watched">Watched</option>
-                <option value="to watch">To watch</option>
-                <option value="watching">Watching</option>
-            </select>
-            <div class="invalid-feedback">
-                Please select a watch status.
-            </div>
-        </div>
-        <div class="form-group">
-            <label for="rating">Rating:</label>
-            <input type="text" name="rating" id="rating" class="form-control" >
-            
-        </div>
-        <button type="submit" class="btn btn-primary">Add Movie</button>
-    </form>
-</div>
+            <div class="form-group">
+                <label for="review">Review:</label>
+                <textarea name="review" id="review" class="form-control" rows="3"></textarea>
 
-<%- include('../partials/footer') %>
+            </div>
+            <div class="form-group">
+                <label for="poster">Poster URL:</label>
+                <input type="text" name="poster" id="poster" class="form-control">
+                
+            </div>
+            <div class="form-group">
+                <label for="watchStatus">Watch Status:</label>
+                <select name="watchStatus" id="watchStatus" class="form-control" required>
+                    <option value="" selected disabled>Select status</option>
+                    <option value="watched">Watched</option>
+                    <option value="to watch">To watch</option>
+                    <option value="watching">Watching</option>
+                </select>
+                
+            </div>
+            <div class="form-group">
+                <label for="rating">Rating:</label>
+                <input type="text" name="rating" id="rating" class="form-control">
+
+            </div>
+            <button type="submit" class="btn btn-primary">Add Movie</button>
+        </form>
+    </div>
+
+    <%- include('../partials/footer') %>

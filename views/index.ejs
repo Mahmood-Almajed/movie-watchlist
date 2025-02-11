@@ -2,16 +2,18 @@
 
     <div class="container mt-5 text-center"></div>
     <% if (user) { %>
-       
-        <h1>Welcome to the Movies Watchlist App <%= user.username %>!</h1> 
+
+        <h1>Welcome to the Movies Watchlist App <%= user.username %>!</h1>
         <div class="user mt-5">
-        <p>create your own watchlist! rate your favorite movies,<br>and track your watched movies <br>all in one place</p>
+            <p>create your own watchlist! rate your favorite movies,<br>and track your watched movies <br>all in one
+                place</p>
         </div>
-    <% } else { %>
-        
-        <h1>Welcome to the Movies Watchlist App guest.</h1>
-        <div class="user mt-5">
-        <p>create your own watchlist! rate your favorite movies,<br>and track your watched movies <br>all in one place</p>
-        </div>
-    <% } %>
-<%- include('partials/footer') %>
+        <% } else { %>
+
+            <h1>Welcome to the Movies Watchlist App guest.</h1>
+            <div class="user mt-5">
+                <p>create your own watchlist! rate your favorite movies,<br>and track your watched movies <br>all in one
+                    place</p>
+            </div>
+            <% } %>
+                <%- include('partials/footer') %>

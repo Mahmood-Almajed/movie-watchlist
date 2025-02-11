@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
 body {
-    background-color: #dedede; 
+    background-color: #dedede;
     margin: 0px;
     text-align: center;
     font-family: Anton, sans-serif;
@@ -15,21 +15,22 @@ body {
     justify-content: center;
 }
 
-.movie-container{
+.movie-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px;
     justify-content: center;
-    margin:0 auto;
+    margin: 0 auto;
 }
+
 .movies-list {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
     align-items: center;
     justify-content: center;
-    
+
 
 }
 
@@ -39,11 +40,11 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: transform 0.2s, box-shadow 0.2s;
-    margin: 10px; 
+    margin: 10px;
     display: flex;
     flex-direction: column;
     width: 250px;
-    
+
 
 }
 
@@ -53,11 +54,11 @@ body {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.card > img {
-    height: 300px; 
-    object-fit: fill; 
+.card>img {
+    height: 300px;
+    object-fit: fill;
     width: 100%;
-    
+
 }
 
 form {
@@ -91,32 +92,43 @@ form {
 }
 
 .navbar {
-    background: linear-gradient(170deg, #4b6cb7, #182848, #ccc); 
+    background: linear-gradient(170deg, #4b6cb7, #182848, #ccc);
     font-size: 1.5rem;
-    padding: 10px; 
+    padding: 10px;
 }
 
-.navbar-expand-lg ,.navbar-nav, .nav-link {
+.navbar-expand-lg,
+.navbar-nav,
+.nav-link {
     color: white;
 
 }
 
-.bi:hover{
+.bi:hover {
     background-color: black;
 }
 
 h1 {
     font-size: 2.5rem;
     margin-top: 15px;
-    color: #4b6cb7; 
+    color: #4b6cb7;
 }
 
 p {
     font-size: 1.25rem;
-    color: #091831; 
+    color: #091831;
     margin-top: 20px;
-   
+
 }
 
+.user-link {
+    text-decoration: none;
+    color: #4b6cb7;
+}
 
+.user-index,
+.user-link:hover {
+    color: black;
+    transition: background-color, 0.2s, border-color 0.1s;
 
+}
