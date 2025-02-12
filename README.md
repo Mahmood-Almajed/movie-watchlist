@@ -19,11 +19,11 @@
   
 
 ## Technologies Used
-- HTML/CSS
-- MongoDB
-- Express.js
-- Node.js
-- Ejs
+- **HTML/CSS**
+- **MongoDB**
+- **Express.js**
+- **Node.js**
+- **Ejs**
 
 
 ## Screenshots
