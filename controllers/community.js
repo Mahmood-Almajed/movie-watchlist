@@ -39,6 +39,8 @@ const userMovies = async (req, res) => {
 
 
 
+
+
 module.exports = {
     communityIndex,
     userMovies,

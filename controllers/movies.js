@@ -31,7 +31,7 @@ const newMovie = async (req, res) => {
     try {
         if (req.body.poster === "") {
 
-            req.body.poster = "https://static.vecteezy.com/system/resources/previews/003/611/119/non_2x/do-not-record-images-no-photography-sign-free-vector.jpg"
+            req.body.poster = "https://www.freeiconspng.com/thumbs/no-image-icon/no-image-icon-6.png"
         }
 
         const userId = await User.findById(req.params.userId);

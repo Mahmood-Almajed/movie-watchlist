@@ -67,7 +67,6 @@ app.delete('/users/:userId/movies/:movieId',moviesCtrl.deleteMovie);
 //COMMUNITY ROUTES
 app.get('/community',communityCtrl.communityIndex);
 app.get('/community/:userId/show',communityCtrl.userMovies)
-
 app.listen(port, () => {
     console.log(`The express app is ready on port ${port}`)
 })

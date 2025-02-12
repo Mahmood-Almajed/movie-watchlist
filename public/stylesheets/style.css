@@ -13,7 +13,9 @@ body {
     align-items: center;
     padding: 20px;
     justify-content: center;
+    
 }
+
 
 .movie-container {
     display: flex;
