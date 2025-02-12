@@ -38,7 +38,7 @@
  ### Create a movie List Page:
  ![image](https://github.com/user-attachments/assets/2473d850-4867-4a41-a3e9-ac0cbbdfa58d)
 
-###movie Watchlist Page:
+### Movie Watchlist Page:
 ![image](https://github.com/user-attachments/assets/f1a18bf8-050a-4075-b4f5-7c4bbb7c2a5b)
 
 
