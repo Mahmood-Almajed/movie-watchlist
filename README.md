@@ -20,6 +20,7 @@
 
 ## Technologies Used
 - **HTML/CSS**
+- **JavaScript**
 - **MongoDB**
 - **Express.js**
 - **Node.js**
